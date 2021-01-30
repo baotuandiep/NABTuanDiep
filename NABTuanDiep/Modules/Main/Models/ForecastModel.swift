@@ -78,7 +78,7 @@ extension ForcastDetailModel: ForecastData {
     }
     
     var humidityString: String {
-        "\(humidity)"
+        "\(humidity) %"
     }
 }
 
