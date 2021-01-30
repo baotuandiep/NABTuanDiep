@@ -66,7 +66,7 @@ struct ForcastDetailModel: Codable {
 
 extension ForcastDetailModel: ForecastData {
     var dateString: String {
-        "\(dt)"
+        Date(timeIntervalSince1970: dt).string()
     }
     
     var averageTempString: String {

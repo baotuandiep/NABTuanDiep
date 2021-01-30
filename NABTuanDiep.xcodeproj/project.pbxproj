@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E25A18225C5E79E00211AD8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A18125C5E79E00211AD8 /* Date+Extension.swift */; };
 		4E2A564E25C5DEC30034AF5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */; };
 		4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564F25C5E17A0034AF5C /* DataBinding.swift */; };
 		4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A565125C5E4B70034AF5C /* Throttler.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E25A18125C5E79E00211AD8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4E2A564F25C5E17A0034AF5C /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
 		4E2A565125C5E4B70034AF5C /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				4EF97F7A25C5CCA9006F1BEA /* UITableView+Extension.swift */,
 				4EF97F7C25C5CD61006F1BEA /* NSObject+Extension.swift */,
 				4EF97F7E25C5CE18006F1BEA /* UITableViewCell+Extension.swift */,
+				4E25A18125C5E79E00211AD8 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			files = (
 				4EF97F8225C5D133006F1BEA /* APIManager.swift in Sources */,
 				4EF97F7F25C5CE18006F1BEA /* UITableViewCell+Extension.swift in Sources */,
+				4E25A18225C5E79E00211AD8 /* Date+Extension.swift in Sources */,
 				4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */,
 				4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */,
 				4EF97F8525C5DBB7006F1BEA /* ForecastModel.swift in Sources */,
