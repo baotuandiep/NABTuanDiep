@@ -1,5 +1,5 @@
 //
-//  MainTableViewController.swift
+//  MainViewController.swift
 //  NABTuanDiep
 //
 //  Created by Tuan Diep on 1/30/21.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class MainViewController: UIViewController {
+    
+    @IBOutlet private weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     
     let viewModel = MailViewModel()
@@ -17,6 +19,8 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "Weather Forecast"
         
+        tableView.registerFromNib(forCellClass: ForecastDetailTableViewCell.self)
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search City"
@@ -24,10 +28,7 @@ class MainTableViewController: UITableViewController {
         definesPresentationContext = true
         searchController.searchBar.delegate = self
         
-        tableView.registerFromNib(forCellClass: ForecastDetailTableViewCell.self)
-        
-//        viewModel.loadData(city: )
-        
+
         listen()
     }
     
@@ -42,17 +43,17 @@ class MainTableViewController: UITableViewController {
     }
     
     func handleError(error: ErrorType?) {
+        guard let error = error else { return }
         
     }
-    
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberItems()
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: ForecastDetailTableViewCell.self, for: indexPath)
         if let value = viewModel.data(at: indexPath.row) {
             cell.configure(data: value)
@@ -61,12 +62,18 @@ class MainTableViewController: UITableViewController {
     }
 }
 
-extension MainTableViewController: UISearchResultsUpdating {
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
     }
 }
 
-extension MainTableViewController: UISearchBarDelegate {
+extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count >= 3 {
             viewModel.loadData(city: searchText)
