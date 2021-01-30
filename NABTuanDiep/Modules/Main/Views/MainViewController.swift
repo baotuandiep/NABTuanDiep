@@ -33,8 +33,14 @@ class MainViewController: UIViewController {
         definesPresentationContext = true
         searchController.searchBar.delegate = self
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Setting", style: .plain, target: self, action: #selector(setting))
 
         listen()
+    }
+    
+    @objc func setting() {
+        let settingVC = SettingViewController()
+        navigationController?.pushViewController(settingVC, animated: true)
     }
     
     func listen() {

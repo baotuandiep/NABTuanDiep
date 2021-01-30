@@ -82,12 +82,6 @@ extension ForcastDetailModel: ForecastData {
     }
 }
 
-enum TempUnit {
-    case matric
-    case standard
-    case imperial
-}
-
 struct TempModel: Codable {
     var day: Double
     var min: Double

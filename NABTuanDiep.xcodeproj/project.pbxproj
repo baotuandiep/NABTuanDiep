@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4E25A18225C5E79E00211AD8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A18125C5E79E00211AD8 /* Date+Extension.swift */; };
+		4E25A18725C5E7DF00211AD8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A18525C5E7DF00211AD8 /* SettingViewController.swift */; };
+		4E25A18825C5E7DF00211AD8 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E25A18625C5E7DF00211AD8 /* SettingViewController.xib */; };
+		4E25A18B25C5E98F00211AD8 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A18A25C5E98F00211AD8 /* SettingModel.swift */; };
+		4E25A19025C5EBDB00211AD8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A18E25C5EBDB00211AD8 /* SettingTableViewCell.swift */; };
+		4E25A19125C5EBDB00211AD8 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E25A18F25C5EBDB00211AD8 /* SettingTableViewCell.xib */; };
+		4E25A19325C5EC6900211AD8 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A19225C5EC6900211AD8 /* SettingViewModel.swift */; };
+		4E25A19825C5ED6D00211AD8 /* SettingPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A19625C5ED6D00211AD8 /* SettingPickerTableViewCell.swift */; };
+		4E25A19925C5ED6D00211AD8 /* SettingPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E25A19725C5ED6D00211AD8 /* SettingPickerTableViewCell.xib */; };
+		4E25A19B25C5EDE400211AD8 /* SettingPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A19A25C5EDE400211AD8 /* SettingPickerViewModel.swift */; };
 		4E2A564E25C5DEC30034AF5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */; };
 		4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564F25C5E17A0034AF5C /* DataBinding.swift */; };
 		4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A565125C5E4B70034AF5C /* Throttler.swift */; };
@@ -39,6 +48,15 @@
 
 /* Begin PBXFileReference section */
 		4E25A18125C5E79E00211AD8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		4E25A18525C5E7DF00211AD8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4E25A18625C5E7DF00211AD8 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		4E25A18A25C5E98F00211AD8 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		4E25A18E25C5EBDB00211AD8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		4E25A18F25C5EBDB00211AD8 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		4E25A19225C5EC6900211AD8 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		4E25A19625C5ED6D00211AD8 /* SettingPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPickerTableViewCell.swift; sourceTree = "<group>"; };
+		4E25A19725C5ED6D00211AD8 /* SettingPickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPickerTableViewCell.xib; sourceTree = "<group>"; };
+		4E25A19A25C5EDE400211AD8 /* SettingPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPickerViewModel.swift; sourceTree = "<group>"; };
 		4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4E2A564F25C5E17A0034AF5C /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
 		4E2A565125C5E4B70034AF5C /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
@@ -80,6 +98,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E25A18325C5E7BC00211AD8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4E25A18925C5E98000211AD8 /* Models */,
+				4E25A18425C5E7C400211AD8 /* Views */,
+				4E25A19225C5EC6900211AD8 /* SettingViewModel.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		4E25A18425C5E7C400211AD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E25A18C25C5EBB000211AD8 /* Cells */,
+				4E25A18525C5E7DF00211AD8 /* SettingViewController.swift */,
+				4E25A18625C5E7DF00211AD8 /* SettingViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E25A18925C5E98000211AD8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E25A18A25C5E98F00211AD8 /* SettingModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4E25A18C25C5EBB000211AD8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E25A19525C5ED5100211AD8 /* SettingPickerTableViewCell */,
+				4E25A18D25C5EBBC00211AD8 /* SettingTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4E25A18D25C5EBBC00211AD8 /* SettingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E25A18E25C5EBDB00211AD8 /* SettingTableViewCell.swift */,
+				4E25A18F25C5EBDB00211AD8 /* SettingTableViewCell.xib */,
+			);
+			path = SettingTableViewCell;
+			sourceTree = "<group>";
+		};
+		4E25A19525C5ED5100211AD8 /* SettingPickerTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E25A19625C5ED6D00211AD8 /* SettingPickerTableViewCell.swift */,
+				4E25A19725C5ED6D00211AD8 /* SettingPickerTableViewCell.xib */,
+				4E25A19A25C5EDE400211AD8 /* SettingPickerViewModel.swift */,
+			);
+			path = SettingPickerTableViewCell;
+			sourceTree = "<group>";
+		};
 		4EF97F2D25C50D4C006F1BEA = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +194,7 @@
 		4EF97F5E25C51E26006F1BEA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4E25A18325C5E7BC00211AD8 /* Setting */,
 				4EF97F6025C51E5C006F1BEA /* Main */,
 			);
 			path = Modules;
@@ -294,6 +369,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF97F6E25C521F9006F1BEA /* LaunchScreen.storyboard in Resources */,
+				4E25A18825C5E7DF00211AD8 /* SettingViewController.xib in Resources */,
+				4E25A19125C5EBDB00211AD8 /* SettingTableViewCell.xib in Resources */,
+				4E25A19925C5ED6D00211AD8 /* SettingPickerTableViewCell.xib in Resources */,
 				4EF97F7825C5C530006F1BEA /* ForecastDetailTableViewCell.xib in Resources */,
 				4EF97F6D25C521F9006F1BEA /* Assets.xcassets in Resources */,
 				4EF97F4125C50D4C006F1BEA /* Main.storyboard in Resources */,
@@ -317,13 +395,19 @@
 				4EF97F8225C5D133006F1BEA /* APIManager.swift in Sources */,
 				4EF97F7F25C5CE18006F1BEA /* UITableViewCell+Extension.swift in Sources */,
 				4E25A18225C5E79E00211AD8 /* Date+Extension.swift in Sources */,
+				4E25A19B25C5EDE400211AD8 /* SettingPickerViewModel.swift in Sources */,
 				4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */,
 				4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */,
+				4E25A18B25C5E98F00211AD8 /* SettingModel.swift in Sources */,
+				4E25A19325C5EC6900211AD8 /* SettingViewModel.swift in Sources */,
+				4E25A19025C5EBDB00211AD8 /* SettingTableViewCell.swift in Sources */,
+				4E25A18725C5E7DF00211AD8 /* SettingViewController.swift in Sources */,
 				4EF97F8525C5DBB7006F1BEA /* ForecastModel.swift in Sources */,
 				4EF97F6F25C521F9006F1BEA /* AppDelegate.swift in Sources */,
 				4EF97F7B25C5CCA9006F1BEA /* UITableView+Extension.swift in Sources */,
 				4E2A564E25C5DEC30034AF5C /* MainViewModel.swift in Sources */,
 				4EF97F6425C52061006F1BEA /* MainViewController.swift in Sources */,
+				4E25A19825C5ED6D00211AD8 /* SettingPickerTableViewCell.swift in Sources */,
 				4EF97F7125C521F9006F1BEA /* SceneDelegate.swift in Sources */,
 				4EF97F7725C5C530006F1BEA /* ForecastDetailTableViewCell.swift in Sources */,
 				4EF97F7D25C5CD61006F1BEA /* NSObject+Extension.swift in Sources */,
