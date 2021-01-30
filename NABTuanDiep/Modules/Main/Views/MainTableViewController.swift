@@ -23,6 +23,22 @@ class MainTableViewController: UITableViewController {
         searchController.searchBar.delegate = self
         
         tableView.registerFromNib(forCellClass: ForecastDetailTableViewCell.self)
+        
+        APIManager.shared.loadData(type: ForecastModel.self,
+                                   path: "/data/2.5/forecast/daily",
+                                   queryParams: [
+            "q": "saigon",
+            "cnt": 10,
+            "appid": "60c6fbeb4b93ac653c492ba806fc346d",
+            "units": "imperial"
+        ]) {
+            switch $0 {
+            case .success(let model):
+                print(model)
+            case .error(let error):
+                print(error)
+            }
+        }
     }
     
     // MARK: - Table view data source

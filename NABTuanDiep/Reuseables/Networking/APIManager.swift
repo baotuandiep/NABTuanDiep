@@ -24,22 +24,21 @@ enum APIResult<T> {
 class APIManager {
     static let shared = APIManager()
     
-    private let host = ""
-    private let scheme = ""
+    private let host = "api.openweathermap.org"
+    private let scheme = "https"
     
     private let urlSession = URLSession.shared
 
     private init() {}
     
-    func loadData<T: Decodable>(type: T.Type, path: String, queryParams: [String :Any], completion: @escaping ((APIResult<T>) -> Void)) {
+    func loadData<T: Codable>(type: T.Type, path: String, queryParams: [String :Any], completion: @escaping ((APIResult<T>) -> Void)) {
         guard let url = url(path: path, queryParams: queryParams) else {
             return completion(.error(.clientError))
         }
         handleRequest(type: type, url: url, completion: completion)
     }
     
-    private func handleRequest<T: Decodable>(type: T.Type, url: URL, completion: @escaping ((APIResult<T>) -> Void)) {
-        completion(.error(.unknow))
+    private func handleRequest<T: Codable>(type: T.Type, url: URL, completion: @escaping ((APIResult<T>) -> Void)) {
         let task = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print(error)
