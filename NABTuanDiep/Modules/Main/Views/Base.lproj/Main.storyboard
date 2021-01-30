@@ -23,10 +23,62 @@
                                     <outlet property="delegate" destination="adz-CM-LW6" id="k5P-2u-UMc"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOr-CZ-V7G">
+                                <rect key="frame" x="77" y="401" width="260" height="148"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rv7-0u-wfZ">
+                                        <rect key="frame" x="10" y="10" width="240" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWl-hw-ryX">
+                                                <rect key="frame" x="120" y="0.0" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toB-it-gOU">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxb-qB-uCG">
+                                                        <rect key="frame" x="10" y="10" width="220" height="108"/>
+                                                        <state key="normal" title="Reload">
+                                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="reloadButtonPressed:" destination="adz-CM-LW6" eventType="touchUpInside" id="xAK-an-Q9k"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="qxb-qB-uCG" firstAttribute="top" secondItem="toB-it-gOU" secondAttribute="top" constant="10" id="IGu-kT-3sD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qxb-qB-uCG" secondAttribute="trailing" constant="10" id="Vt4-Lh-Ktk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qxb-qB-uCG" secondAttribute="bottom" constant="10" id="dUP-ui-bJC"/>
+                                                    <constraint firstItem="qxb-qB-uCG" firstAttribute="leading" secondItem="toB-it-gOU" secondAttribute="leading" constant="10" id="eZm-2W-Mp5"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rv7-0u-wfZ" secondAttribute="trailing" constant="10" id="9hT-hB-YVx"/>
+                                    <constraint firstItem="rv7-0u-wfZ" firstAttribute="top" secondItem="IOr-CZ-V7G" secondAttribute="top" constant="10" id="MH0-Zm-l81"/>
+                                    <constraint firstItem="rv7-0u-wfZ" firstAttribute="centerY" secondItem="IOr-CZ-V7G" secondAttribute="centerY" id="a1O-VB-yra"/>
+                                    <constraint firstItem="rv7-0u-wfZ" firstAttribute="centerX" secondItem="IOr-CZ-V7G" secondAttribute="centerX" id="wMm-du-NG0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OPS-PU-1oG" secondAttribute="bottom" id="06x-Cl-sa5"/>
+                            <constraint firstItem="IOr-CZ-V7G" firstAttribute="centerY" secondItem="rst-Re-L2o" secondAttribute="centerY" id="3VV-Gp-j7I"/>
+                            <constraint firstItem="IOr-CZ-V7G" firstAttribute="centerX" secondItem="rst-Re-L2o" secondAttribute="centerX" id="Q83-lb-kRD"/>
+                            <constraint firstItem="IOr-CZ-V7G" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rst-Re-L2o" secondAttribute="leading" constant="30" id="W8e-c2-MTm"/>
                             <constraint firstItem="OPS-PU-1oG" firstAttribute="top" secondItem="rst-Re-L2o" secondAttribute="top" id="hU7-ej-jvS"/>
                             <constraint firstItem="OPS-PU-1oG" firstAttribute="leading" secondItem="mVF-kv-dfR" secondAttribute="leading" id="jPE-X0-QVK"/>
                             <constraint firstItem="rst-Re-L2o" firstAttribute="trailing" secondItem="OPS-PU-1oG" secondAttribute="trailing" id="kd2-85-7c4"/>
@@ -35,6 +87,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="uPl-oF-z4u"/>
                     <connections>
+                        <outlet property="errorLabel" destination="wWl-hw-ryX" id="rYc-io-19G"/>
+                        <outlet property="errorView" destination="IOr-CZ-V7G" id="zLk-So-mg5"/>
+                        <outlet property="reloadButtonContainerView" destination="toB-it-gOU" id="aKl-0B-fhu"/>
                         <outlet property="tableView" destination="OPS-PU-1oG" id="C6u-i7-Fd5"/>
                     </connections>
                 </viewController>

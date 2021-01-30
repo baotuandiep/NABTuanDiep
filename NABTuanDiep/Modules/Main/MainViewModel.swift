@@ -28,6 +28,11 @@ class MailViewModel {
     
     func loadData(city: String) {
         _loadDataThrottler.throttle { [weak self] in
+            guard city.count >= 3 else {
+                self?.model.value = nil
+                self?.error.value = nil
+                return
+            }
             APIManager.shared.loadData(type: ForecastModel.self,
                                        path: "/data/2.5/forecast/daily",
                                        queryParams: [

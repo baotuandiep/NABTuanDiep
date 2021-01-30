@@ -10,6 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    
+    @IBOutlet private weak var errorView: UIView!
+    
+    @IBOutlet weak var reloadButtonContainerView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -43,8 +48,23 @@ class MainViewController: UIViewController {
     }
     
     func handleError(error: ErrorType?) {
-        guard let error = error else { return }
-        
+        guard let error = error else {
+            errorView.isHidden = true
+            return
+        }
+        errorView.isHidden = false
+        switch error {
+        case .noData:
+            errorLabel.text = "No data for " + searchController.searchBar.text!
+            reloadButtonContainerView.isHidden = true
+        default:
+            errorLabel.text = error.value
+            reloadButtonContainerView.isHidden = false
+        }
+    }
+    
+    @IBAction func reloadButtonPressed(_ sender: UIButton) {
+        viewModel.loadData(city: searchController.searchBar.text!)
     }
 }
 
@@ -75,11 +95,6 @@ extension MainViewController: UISearchResultsUpdating {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count >= 3 {
-            viewModel.loadData(city: searchText)
-        }
-    }
-
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        viewModel.loadData(city: searchText)
     }
 }
