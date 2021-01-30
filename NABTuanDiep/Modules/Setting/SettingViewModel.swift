@@ -25,15 +25,11 @@ class SettingViewModel {
     }
     
     var cntIndex: Int {
-        cntArray.firstIndex(of: "\(settingModel.cnt + 1)") ?? 7
+        cntArray.firstIndex(of: "\(settingModel.cnt)") ?? 6
     }
     
     var tempUnitIndex: Int {
         TempUnit.allCases.firstIndex(of: settingModel.unit) ?? 0
-    }
-    
-    init() {
-        settingModel = SettingModel()
     }
     
     func array(index: Int) -> [String] {
@@ -44,7 +40,7 @@ class SettingViewModel {
         if index == 0 {
             return settingModel.unit.rawValue
         } else {
-            return "\(settingModel.cnt)"
+            return "\(cntIndex + 1)"
         }
     }
     

@@ -18,6 +18,7 @@ class SettingPickerTableViewCell: UITableViewCell {
     func configure(values: [String], selectedIndex: Int) {
         viewModel.update(values: values, selectedIndex: selectedIndex)
         pickerView.reloadAllComponents()
+        pickerView.selectRow(selectedIndex, inComponent: 0, animated: false)
     }
 }
 

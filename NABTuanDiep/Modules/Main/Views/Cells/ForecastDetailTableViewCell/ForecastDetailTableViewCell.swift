@@ -28,5 +28,4 @@ class ForecastDetailTableViewCell: UITableViewCell {
         humidityLabel.text = data.humidityString
         descriptionLabel.text = data.description
     }
-    
 }
