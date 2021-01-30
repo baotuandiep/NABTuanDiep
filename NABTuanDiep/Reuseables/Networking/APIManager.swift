@@ -9,11 +9,29 @@
 import Foundation
 
 enum ErrorType {
+    case requestError(String)
     case dataError
     case clientError
     case serverError
     case noData
     case unknow
+    
+    var value: String {
+        switch self {
+        case .dataError:
+            return "Data Error"
+        case .clientError:
+            return "Data Format Error"
+        case .serverError:
+            return "Somethings wrong with our server"
+        case .noData:
+            return "No data"
+        case .unknow:
+            return "Unknow error"
+        case .requestError(let string):
+            return string
+        }
+    }
 }
 
 enum APIResult<T> {
@@ -41,8 +59,7 @@ class APIManager {
     private func handleRequest<T: Codable>(type: T.Type, url: URL, completion: @escaping ((APIResult<T>) -> Void)) {
         let task = urlSession.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print(error)
-                return
+                return completion(.error(.requestError(error.localizedDescription)))
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
@@ -63,6 +80,8 @@ class APIManager {
                 } else {
                     completion(.error(.noData))
                 }
+            case 404:
+                completion(.error(.noData))
             case 400...499:
                 completion(.error(.clientError))
             case 500...599:

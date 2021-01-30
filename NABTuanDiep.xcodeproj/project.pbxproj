@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2A564E25C5DEC30034AF5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */; };
+		4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564F25C5E17A0034AF5C /* DataBinding.swift */; };
+		4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A565125C5E4B70034AF5C /* Throttler.swift */; };
 		4EF97F4125C50D4C006F1BEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF97F3F25C50D4C006F1BEA /* Main.storyboard */; };
 		4EF97F5125C50D4D006F1BEA /* NABTuanDiepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF97F5025C50D4D006F1BEA /* NABTuanDiepTests.swift */; };
 		4EF97F6425C52061006F1BEA /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF97F6325C52061006F1BEA /* MainTableViewController.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4E2A564F25C5E17A0034AF5C /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
+		4E2A565125C5E4B70034AF5C /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		4EF97F3625C50D4C006F1BEA /* NABTuanDiep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NABTuanDiep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF97F4025C50D4C006F1BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EF97F4C25C50D4D006F1BEA /* NABTuanDiepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NABTuanDiepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +128,7 @@
 			children = (
 				4EF97F8625C5E345006F1BEA /* Views */,
 				4EF97F8325C5DB7F006F1BEA /* Models */,
+				4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -131,6 +138,8 @@
 			children = (
 				4EF97F8025C5D11D006F1BEA /* Networking */,
 				4EF97F7925C5CC8E006F1BEA /* Extensions */,
+				4E2A564F25C5E17A0034AF5C /* DataBinding.swift */,
+				4E2A565125C5E4B70034AF5C /* Throttler.swift */,
 			);
 			path = Reuseables;
 			sourceTree = "<group>";
@@ -304,9 +313,12 @@
 			files = (
 				4EF97F8225C5D133006F1BEA /* APIManager.swift in Sources */,
 				4EF97F7F25C5CE18006F1BEA /* UITableViewCell+Extension.swift in Sources */,
+				4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */,
+				4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */,
 				4EF97F8525C5DBB7006F1BEA /* ForecastModel.swift in Sources */,
 				4EF97F6F25C521F9006F1BEA /* AppDelegate.swift in Sources */,
 				4EF97F7B25C5CCA9006F1BEA /* UITableView+Extension.swift in Sources */,
+				4E2A564E25C5DEC30034AF5C /* MainViewModel.swift in Sources */,
 				4EF97F6425C52061006F1BEA /* MainTableViewController.swift in Sources */,
 				4EF97F7125C521F9006F1BEA /* SceneDelegate.swift in Sources */,
 				4EF97F7725C5C530006F1BEA /* ForecastDetailTableViewCell.swift in Sources */,

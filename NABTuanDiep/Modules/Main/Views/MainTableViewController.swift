@@ -11,6 +11,8 @@ import UIKit
 class MainTableViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
+    let viewModel = MailViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Weather Forecast"
@@ -24,37 +26,37 @@ class MainTableViewController: UITableViewController {
         
         tableView.registerFromNib(forCellClass: ForecastDetailTableViewCell.self)
         
-        APIManager.shared.loadData(type: ForecastModel.self,
-                                   path: "/data/2.5/forecast/daily",
-                                   queryParams: [
-            "q": "saigon",
-            "cnt": 10,
-            "appid": "60c6fbeb4b93ac653c492ba806fc346d",
-            "units": "imperial"
-        ]) {
-            switch $0 {
-            case .success(let model):
-                print(model)
-            case .error(let error):
-                print(error)
-            }
+//        viewModel.loadData(city: )
+        
+        listen()
+    }
+    
+    func listen() {
+        viewModel.error.bind { [weak self] in
+            self?.handleError(error: $0)
         }
+        
+        viewModel.model.bind { [weak self] _ in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    func handleError(error: ErrorType?) {
+        
     }
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return viewModel.numberItems()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: ForecastDetailTableViewCell.self, for: indexPath)
+        if let value = viewModel.data(at: indexPath.row) {
+            cell.configure(data: value)
+        }
         return cell
     }
 }
@@ -65,6 +67,12 @@ extension MainTableViewController: UISearchResultsUpdating {
 }
 
 extension MainTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count >= 3 {
+            viewModel.loadData(city: searchText)
+        }
+    }
+
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
     }
 }

@@ -163,6 +163,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="averageTempLabel" destination="1vc-zn-jTh" id="Xqo-P0-Txa"/>
+                <outlet property="dateLabel" destination="knH-yu-lDg" id="zjn-Yz-gbn"/>
+                <outlet property="descriptionLabel" destination="z7Y-ye-Fcg" id="hwL-NI-FwE"/>
+                <outlet property="humidityLabel" destination="ORB-n1-Rsl" id="6QE-o3-Toh"/>
+                <outlet property="pressureLabel" destination="XDq-SA-LAH" id="MeV-bF-bjt"/>
+            </connections>
             <point key="canvasLocation" x="180.43478260869566" y="160.37946428571428"/>
         </tableViewCell>
     </objects>

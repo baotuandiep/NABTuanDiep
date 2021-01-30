@@ -10,15 +10,23 @@ import UIKit
 
 class ForecastDetailTableViewCell: UITableViewCell {
 
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var averageTempLabel: UILabel!
+    @IBOutlet private weak var pressureLabel: UILabel!
+    @IBOutlet private weak var humidityLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(data: ForecastData) {
+        dateLabel.text = data.dateString
+        averageTempLabel.text = data.averageTempString
+        pressureLabel.text = data.pressureString
+        humidityLabel.text = data.humidityString
+        descriptionLabel.text = data.description
     }
     
 }

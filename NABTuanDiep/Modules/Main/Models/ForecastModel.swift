@@ -27,6 +27,14 @@ struct CoordModel: Codable {
     var lat: Double
 }
 
+protocol ForecastData {
+    var dateString: String { get }
+    var averageTempString: String { get }
+    var pressureString: String { get }
+    var humidityString: String { get }
+    var description: String { get }
+}
+
 struct ForcastDetailModel: Codable {
     var dt: Double
     var sunrise: Double
@@ -53,6 +61,24 @@ struct ForcastDetailModel: Codable {
     
     func avengerTempDisplay(unit: TempUnit) -> String {
         ""
+    }
+}
+
+extension ForcastDetailModel: ForecastData {
+    var dateString: String {
+        "\(dt)"
+    }
+    
+    var averageTempString: String {
+        "\(avengerTemp)"
+    }
+    
+    var pressureString: String {
+        "\(pressure)"
+    }
+    
+    var humidityString: String {
+        "\(humidity)"
     }
 }
 
