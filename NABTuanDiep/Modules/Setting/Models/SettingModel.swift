@@ -14,6 +14,17 @@ enum TempUnit: String, Codable, CaseIterable {
     case metric
     case standard
     case imperial
+    
+    var unit: String {
+        switch self {
+        case .metric:
+            return "°C"
+        case .imperial:
+            return "°F"
+        case .standard:
+            return "°K"
+        }
+    }
 }
 
 struct SettingModel: Codable {

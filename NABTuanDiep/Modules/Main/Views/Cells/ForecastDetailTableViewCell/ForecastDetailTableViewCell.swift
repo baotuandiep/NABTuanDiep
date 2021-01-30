@@ -21,9 +21,9 @@ class ForecastDetailTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure(data: ForecastData) {
+    func configure(data: ForecastData, unit: String) {
         dateLabel.text = data.dateString
-        averageTempLabel.text = data.averageTempString
+        averageTempLabel.text = data.averageTempString + unit
         pressureLabel.text = data.pressureString
         humidityLabel.text = data.humidityString
         descriptionLabel.text = data.description

@@ -16,6 +16,7 @@ enum SettingRow: String, CaseIterable {
 class SettingViewController: UIViewController {
     
     var viewModel = SettingViewModel()
+    var updateSetting: (() -> Void)?
 
     @IBOutlet private weak var tableView: UITableView!
 
@@ -46,6 +47,7 @@ extension SettingViewController: UITableViewDataSource {
             cell.configure(values: viewModel.array(index: indexPath.section), selectedIndex: viewModel.selectedIndex(index: indexPath.section))
             cell.didChangeIndex = { [weak self] in
                 self?.viewModel.updateIndex(index: indexPath.section, value: $0)
+                self?.updateSetting?()
                 tableView.reloadData()
             }
             return cell

@@ -10,12 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    
     @IBOutlet private weak var errorView: UIView!
-    
     @IBOutlet weak var reloadButtonContainerView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     let viewModel = MailViewModel()
@@ -40,6 +39,9 @@ class MainViewController: UIViewController {
     
     @objc func setting() {
         let settingVC = SettingViewController()
+        settingVC.updateSetting = { [weak self] in
+            self?.viewModel.updateSetting()
+        }
         navigationController?.pushViewController(settingVC, animated: true)
     }
     
@@ -82,7 +84,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: ForecastDetailTableViewCell.self, for: indexPath)
         if let value = viewModel.data(at: indexPath.row) {
-            cell.configure(data: value)
+            cell.configure(data: value, unit: viewModel.tempUnit)
         }
         return cell
     }
@@ -102,5 +104,9 @@ extension MainViewController: UISearchResultsUpdating {
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.loadData(city: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.clearData()
     }
 }

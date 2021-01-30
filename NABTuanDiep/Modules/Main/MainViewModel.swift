@@ -13,6 +13,11 @@ class MailViewModel {
     var error = DataBinding<ErrorType?>(value: nil).queue(receiveQueue: .main)
     
     private lazy var _loadDataThrottler = Throttler()
+    var settingModel = SettingModel.load()
+    
+    var tempUnit: String {
+        return settingModel.unit.unit
+    }
     
     func numberItems() -> Int {
         guard let model = model.value else {
@@ -26,20 +31,28 @@ class MailViewModel {
         return model.list[index]
     }
     
+    func updateSetting() {
+        settingModel = SettingModel.load()
+    }
+    
+    func clearData() {
+        model.value = nil
+        error.value = nil
+    }
+    
     func loadData(city: String) {
         _loadDataThrottler.throttle { [weak self] in
+            guard let self = self else { return }
             guard city.count >= 3 else {
-                self?.model.value = nil
-                self?.error.value = nil
-                return
+                return self.clearData()
             }
             APIManager.shared.loadData(type: ForecastModel.self,
                                        path: "/data/2.5/forecast/daily",
                                        queryParams: [
                 "q": city,
-                "cnt": 10,
+                "cnt": self.settingModel.cnt,
                 "appid": "60c6fbeb4b93ac653c492ba806fc346d",
-                "units": "imperial"
+                "units": self.settingModel.unit.rawValue
             ]) { [weak self] in
                 switch $0 {
                 case .success(let model):

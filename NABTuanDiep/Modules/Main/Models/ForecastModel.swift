@@ -70,7 +70,7 @@ extension ForcastDetailModel: ForecastData {
     }
     
     var averageTempString: String {
-        "\(avengerTemp)"
+        String(format: "%.f", avengerTemp)
     }
     
     var pressureString: String {
