@@ -51,7 +51,6 @@ class MailViewModel {
                                        queryParams: [
                 "q": city,
                 "cnt": self.settingModel.cnt,
-                "appid": "60c6fbeb4b93ac653c492ba806fc346d",
                 "units": self.settingModel.unit.rawValue
             ]) { [weak self] in
                 switch $0 {
