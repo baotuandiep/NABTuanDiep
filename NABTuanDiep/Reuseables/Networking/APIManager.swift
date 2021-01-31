@@ -71,10 +71,8 @@ class APIManager {
                 if let data = data {
                     do {
                         let result = try decoder.decode(T.self, from: data)
-                        print(result)
                         completion(.success(result))
                     } catch {
-                        print(error)
                         completion(.error(.dataError))
                     }
                 } else {

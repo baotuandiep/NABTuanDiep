@@ -45,7 +45,7 @@ class APIManagerTests: XCTestCase {
         wait(for: [expect], timeout: 2)
     }
     
-    func testFetchDataWithWrongMethod() {
+    func testFetchDataWithWrongPath() {
         let apiManager = self.apiManager!
         
         let expect = XCTestExpectation(description: "callback")
@@ -54,6 +54,50 @@ class APIManagerTests: XCTestCase {
             "q": "saigon",
             "cnt": 7,
             "units": TempUnit.metric.rawValue
+        ]) {
+            expect.fulfill()
+            switch $0 {
+            case .success:
+                XCTAssertFalse(true)
+            case .error:
+                XCTAssertFalse(false)
+            }
+        }
+        
+        wait(for: [expect], timeout: 2)
+    }
+    
+    func testFetchDataWithWrongCnt() {
+        let apiManager = self.apiManager!
+        
+        let expect = XCTestExpectation(description: "callback")
+        
+        apiManager.loadData(type: ForecastModel.self, path: "/data/2.5/forecast/daily", queryParams: [
+            "q": "saigon",
+            "cnt": 20,
+            "units": "wrong unit"
+        ]) {
+            expect.fulfill()
+            switch $0 {
+            case .success:
+                XCTAssertFalse(true)
+            case .error:
+                XCTAssertFalse(false)
+            }
+        }
+        
+        wait(for: [expect], timeout: 2)
+    }
+    
+    func testFetchDataWithWrongTypeModel() {
+        let apiManager = self.apiManager!
+        
+        let expect = XCTestExpectation(description: "callback")
+        
+        apiManager.loadData(type: CityModel.self, path: "/data/2.5/forecast/daily", queryParams: [
+            "q": "saigon",
+            "cnt": 7,
+            "units": "wrong unit"
         ]) {
             expect.fulfill()
             switch $0 {
