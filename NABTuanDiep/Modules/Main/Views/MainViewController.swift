@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
         title = "Weather Forecast"
         
         tableView.registerFromNib(forCellClass: ForecastDetailTableViewCell.self)
+        tableView.keyboardDismissMode = .onDrag
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
