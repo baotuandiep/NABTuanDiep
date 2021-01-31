@@ -21,6 +21,7 @@
 		4E2A564E25C5DEC30034AF5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */; };
 		4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564F25C5E17A0034AF5C /* DataBinding.swift */; };
 		4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A565125C5E4B70034AF5C /* Throttler.swift */; };
+		4E653FDA25C66296000658FD /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E653FD925C66296000658FD /* APIManagerTests.swift */; };
 		4EF97F4125C50D4C006F1BEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF97F3F25C50D4C006F1BEA /* Main.storyboard */; };
 		4EF97F5125C50D4D006F1BEA /* NABTuanDiepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF97F5025C50D4D006F1BEA /* NABTuanDiepTests.swift */; };
 		4EF97F6425C52061006F1BEA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF97F6325C52061006F1BEA /* MainViewController.swift */; };
@@ -62,6 +63,7 @@
 		4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4E2A564F25C5E17A0034AF5C /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
 		4E2A565125C5E4B70034AF5C /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		4E653FD925C66296000658FD /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		4EF97F3625C50D4C006F1BEA /* NABTuanDiep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NABTuanDiep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF97F4025C50D4C006F1BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EF97F4C25C50D4D006F1BEA /* NABTuanDiepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NABTuanDiepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,28 @@
 			path = SettingPickerTableViewCell;
 			sourceTree = "<group>";
 		};
+		4E653FD625C65FD2000658FD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		4E653FD725C65FE9000658FD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4E653FD825C66283000658FD /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				4E653FD925C66296000658FD /* APIManagerTests.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		4EF97F2D25C50D4C006F1BEA = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +211,9 @@
 		4EF97F4F25C50D4D006F1BEA /* NABTuanDiepTests */ = {
 			isa = PBXGroup;
 			children = (
+				4E653FD825C66283000658FD /* APIManager */,
+				4E653FD725C65FE9000658FD /* Main */,
+				4E653FD625C65FD2000658FD /* Setting */,
 				4EF97F5025C50D4D006F1BEA /* NABTuanDiepTests.swift */,
 				4EF97F5225C50D4D006F1BEA /* Info.plist */,
 			);
@@ -422,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E653FDA25C66296000658FD /* APIManagerTests.swift in Sources */,
 				4EF97F5125C50D4D006F1BEA /* NABTuanDiepTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

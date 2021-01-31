@@ -22,7 +22,7 @@ class DataBinding<T> {
                     self.handler?(self.value)
                 }
             } else {
-                
+                self.handler?(self.value)
             }
         }
     }
