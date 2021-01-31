@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    let viewModel = MailViewModel()
+    let viewModel = MainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

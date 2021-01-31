@@ -36,8 +36,8 @@ class DataBinding<T> {
         return self
     }
     
-    func bind(hdl: @escaping Handler) {
+    func bind(isNow: Bool = true, hdl: @escaping Handler) {
         handler = hdl
-        handler?(value)
+        if isNow { handler?(value) }
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MailViewModel {
+class MainViewModel {
     var model = DataBinding<ForecastModel?>(value: nil).queue(receiveQueue: .main)
     var error = DataBinding<ErrorType?>(value: nil).queue(receiveQueue: .main)
     
