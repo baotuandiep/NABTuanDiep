@@ -17,6 +17,7 @@
 		4E25A19825C5ED6D00211AD8 /* SettingPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A19625C5ED6D00211AD8 /* SettingPickerTableViewCell.swift */; };
 		4E25A19925C5ED6D00211AD8 /* SettingPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E25A19725C5ED6D00211AD8 /* SettingPickerTableViewCell.xib */; };
 		4E25A19B25C5EDE400211AD8 /* SettingPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A19A25C5EDE400211AD8 /* SettingPickerViewModel.swift */; };
+		4E25A19D25C6454C00211AD8 /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25A19C25C6454C00211AD8 /* Obfuscator.swift */; };
 		4E2A564E25C5DEC30034AF5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */; };
 		4E2A565025C5E17A0034AF5C /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A564F25C5E17A0034AF5C /* DataBinding.swift */; };
 		4E2A565225C5E4B70034AF5C /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A565125C5E4B70034AF5C /* Throttler.swift */; };
@@ -57,6 +58,7 @@
 		4E25A19625C5ED6D00211AD8 /* SettingPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPickerTableViewCell.swift; sourceTree = "<group>"; };
 		4E25A19725C5ED6D00211AD8 /* SettingPickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPickerTableViewCell.xib; sourceTree = "<group>"; };
 		4E25A19A25C5EDE400211AD8 /* SettingPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPickerViewModel.swift; sourceTree = "<group>"; };
+		4E25A19C25C6454C00211AD8 /* Obfuscator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
 		4E2A564D25C5DEC30034AF5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4E2A564F25C5E17A0034AF5C /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
 		4E2A565125C5E4B70034AF5C /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				4EF97F7925C5CC8E006F1BEA /* Extensions */,
 				4E2A564F25C5E17A0034AF5C /* DataBinding.swift */,
 				4E2A565125C5E4B70034AF5C /* Throttler.swift */,
+				4E25A19C25C6454C00211AD8 /* Obfuscator.swift */,
 			);
 			path = Reuseables;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				4EF97F7125C521F9006F1BEA /* SceneDelegate.swift in Sources */,
 				4EF97F7725C5C530006F1BEA /* ForecastDetailTableViewCell.swift in Sources */,
 				4EF97F7D25C5CD61006F1BEA /* NSObject+Extension.swift in Sources */,
+				4E25A19D25C6454C00211AD8 /* Obfuscator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,7 +44,6 @@ class APIManager {
     
     private let host = "api.openweathermap.org"
     private let scheme = "https"
-    private let apiKeyEncrypted = "60c6fbeb4b93ac653c492ba806fc346d"
     
     private let urlSession = URLSession.shared
 
@@ -102,7 +101,12 @@ class APIManager {
         urlComponent.queryItems = queryParams.map {
             URLQueryItem(name: $0.key, value: "\($0.value)")
         }
-        urlComponent.queryItems?.append(URLQueryItem(name: "apiKey", value: apiKeyEncrypted))
+        urlComponent.queryItems?.append(URLQueryItem(name: "apiKey", value: apiKey))
         return urlComponent.url
+    }
+    
+    private var apiKey: String {
+        let obfuscator = Obfuscator()
+        return obfuscator.reveal(key: [119, 64, 19, 114, 3, 14, 0, 5, 85, 22, 92, 125, 50, 44, 84, 95, 86, 0, 64, 120, 66, 18, 37, 93, 92, 83, 1, 2, 71, 81, 120, 55])
     }
 }
